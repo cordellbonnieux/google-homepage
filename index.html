@@ -1,39 +1,252 @@
 <html>
 <head>
+<link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <style>
+/* resets */
+body{
+    font-family:arial, sans-serif;
+}
+ul,li,ol{
+    list-style:none;
+    display:inline-block;
+}
+a{
+    color:#000;
+    opacity:0.87;
+    text-decoration:none;
+    padding-left:15px;
+    font-size:13px;
+    cursor: pointer;
+}
+input{
+    font-size:14px;
+}
+    a:hover{
+        opacity:0.75;
+    }
+button{
+    cursor: pointer;
+}
+    a:hover{
+        text-decoration:underline;
+    }
+/* adjusting navigation margins */
+nav .top ul{
+    margin-top:8px;
+    padding-left:15px;
+}
+.left,.right{
+    display:inline-block;
+    margin:0;
+    width:50%;
+}
+    .right{
+        float:right;
+        text-align:right;
+    }
+    .left{
+        text-align:left;
+    }
+        .left.top ul li{
+            margin-top:6px;
+        }
+/* top left menu, app selection icon */
+.icono-tiles{
+    color: #000;
+    box-shadow: 0 -6px 0,-6px -6px 0,6px -6px 0,0 0 0 24px inset,-6px 0 0,6px 0 0,0 6px 0,-6px 6px 0,6px 6px 0;
+    opacity: 0.75;
+    margin:10px 10px 12px 10px;
+}
+    .icono-tiles:hover{
+        opacity:1;
+    }
+    /* tile/app icon wrapper */
+    #tile-wrapper{
+        display:inline-block;
+        height:24px;
+    }
+        #tile-wrapper:hover{
+            opacity:1;
+        }
+/* top right menu, sign in button */
+#sign-in-button{
+    cursor: pointer;
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    background-color:#4285f4;
+    color:#ffffff;
+    padding: 5px 12px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    outline: none;
+    margin: 0 20px 0 15px;
+}
+    #sign-in-button:hover{
+        box-shadow: 0 1px 0 rgba(0,0,0,.15);
+    }
+/*main container */
+.container{
+    display:block;
+    width:600px;
+    margin:0 auto;
+}
+    /* main container content */
+    .container div{
+        text-align:center;
+    }
+/* google logo container */
+#logo-container{
+    padding-top:101px;
+    margin-bottom: 28px;
+}
+/* search bar wrapper */
+#search-bar-wrapper{
+    width:582px;
+    display:block;
+    border: 1px solid #dfe1e5;
+    border-radius:24px;
+    height:44px;
+    margin:0 auto;
+}
+    #search-bar-wrapper:hover{
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+        border-color: rgba(223,225,229,0);
+    }
+    /* search icon */
+    .search-icon {
+    color: #000;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 3px;
+    width: 7px;
+    height: 7px;
+    border: solid 2px #9AA0A6;
+    border-radius: 100%;
+     -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    display: block;
+    margin-left: 20px;
+    margin-top: 14px;
+    opacity: 1;
+    }
+    .search-icon:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 2.5px;
+    height: 8px;
+    width: 2px;
+    background-color: #9AA0A6;
+    }
+    /* search bar */
+    #search-bar{
+        margin-top:3px;
+        height:39px;
+        width:487px;
+        background:transparent;
+        border:none;
+    }
+/* mic icon */
+#mic-icon-wrapper{
+    display: inline-block;
+}
+    #mic-icon{
+        background: url('//web.archive.org/web/20191130234759im_/https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png') 0 0 no-repeat;
+        height: 24px;
+        width: 24px;
+        background-size: 24px;
+        display:inline-block;
+        position:absolute;
+        margin-top:-18px;
+    }
+/* google search & I'm feeling lucky buttons */
+#search-button-wrapper{
+    padding-top:18px;
+}
+.submit-button{
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+}
+    .submit-button:hover{
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+        background-color: #f8f8f8;
+        border: 1px solid #c6c6c6;
+        color: #222;
+    }
+/* footer */
+footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    font-size: 10pt;
+    height: 40px;
+    background: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+}
+    /* footer links */
+    footer a{
+        font-size:14px;
+        color:#5f6368;
+        opacity:1;
+        padding:0;
+        margin:0 0 0 27px;
+    }
+/* footer margins */
+footer .left.bottom ul{
+    padding:0;
+}
+footer .right.bottom ul{
+    padding:0 30px 0 0;
+}
 
     </style>
 </head>
 <nav>
-<div>
+<div class="left top">
     <ul>
         <li><a href="#">About</a></li>
-        <li><a href="#"><a>Store</a></li>
+        <li><a href="#">Store</a></li>
     </ul>
 </div>
-<div>
+<div class="right top">
     <ul>
         <li><a href="#">Gmail</a></li>
         <li><a href="#">Images</a></li>
-        <li><a href="#"><div></div></a></li>
-        <li><input type="button" href="#" value="Sign in"></li>
+        <li><a id="tile-wrapper" href="#"><div class="icono-tiles"></div></a></li>
+        <li><input type="button" href="#" value="Sign in" id="sign-in-button"></li>
     </ul>
 </div>
 </nav>
 <main class="container">
-    <div><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
-    <div><input type="text"></div>
-    <div><input type="button" value="Google Search"><input type="button" value="I'm Feeling Lucky"></div>
+    <div id="logo-container"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></div>
+    <div id="search-bar-wrapper"><div id="search-icon-wrapper"><div class="search-icon"></div></div>
+    <input type="text" id="search-bar"><div id="mic-icon-wrapper"><span id="mic-icon"></span></div></div>
+    <div id="search-button-wrapper"><input type="button" value="Google Search" class="submit-button"><input type="button" value="I'm Feeling Lucky" class="submit-button"></div>
 </main>
 <footer>
-    <div>
+    <div class="left bottom">
         <ul>
             <li><a href="#">Advertising</a></li>
             <li><a href="#">Business</a></li>
             <li><a href="#">How Search Works</a></li>
         </ul>
     </div>
-    <div>
+    <div class="right bottom">
         <ul>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms</a></li>
